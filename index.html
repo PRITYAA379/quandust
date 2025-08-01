@@ -2,52 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Quantum Matter – Educational Site</title>
+  <title>Quantum Matter – Dark Dimensions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&display=swap" />
   <style>
+    :root {
+      --glow-color: rgba(255, 255, 255, 0.8);
+      --glow-spread: 0.5rem;
+    }
+    
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Audiowide', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f9;
-      color: #111;
+      background: #000;
+      color: #fff;
       line-height: 1.6;
+      perspective: 1000px;
     }
+    
     header {
-      background: #1e1e3f;
+      background: #000;
       color: white;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      border-bottom: 1px solid #333;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      transform-style: preserve-3d;
     }
+    
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 10px var(--glow-color), 
+                   0 0 20px var(--glow-color);
+      letter-spacing: 0.2rem;
+      animation: pulse 2s infinite alternate;
+    }
+    
+    @keyframes pulse {
+      from { text-shadow: 0 0 5px var(--glow-color); }
+      to { text-shadow: 0 0 15px var(--glow-color), 
+                        0 0 30px var(--glow-color); }
+    }
+    
     nav a {
       margin: 0.5rem 1rem;
-      color: #ddd;
+      color: #fff;
       text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      position: relative;
+      transition: all 0.3s ease;
     }
+    
     nav a:hover {
-      text-decoration: underline;
+      color: #fff;
+      text-shadow: 0 0 10px var(--glow-color);
     }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--glow-color);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
     section {
       padding: 2rem;
       max-width: 900px;
-      margin: auto;
+      margin: 2rem auto;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid #333;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05),
+                 0 0 40px rgba(255, 255, 255, 0.02) inset;
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
     }
-    section:nth-child(even) {
-      background: #fff;
+    
+    section:hover {
+      transform: translateZ(20px);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1),
+                 0 0 60px rgba(255, 255, 255, 0.05) inset;
     }
-    h1, h2 {
-      color: #222;
+    
+    h2, h3 {
+      color: #fff;
+      text-shadow: 0 0 5px var(--glow-color);
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.1rem;
     }
+    
+    p {
+      color: #ccc;
+    }
+    
     footer {
-      background: #1e1e3f;
+      background: #000;
       color: #ccc;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem;
       margin-top: 3rem;
+      border-top: 1px solid #333;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+    
+    /* 3D floating elements */
+    .floating {
+      position: fixed;
+      opacity: 0.1;
+      z-index: -1;
+      animation: float 15s infinite ease-in-out;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      25% { transform: translate3d(50px, 50px, 50px) rotate(5deg); }
+      50% { transform: translate3d(0, 100px, 100px) rotate(0deg); }
+      75% { transform: translate3d(-50px, 50px, 50px) rotate(-5deg); }
+    }
+    
+    /* Scary text effects */
+    .scary-text {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .scary-text::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      color: rgba(255,0,0,0.3);
+      z-index: -1;
+      animation: glitch 3s infinite;
+    }
+    
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+    
+    /* Matrix rain effect */
+    .matrix-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: 0.1;
     }
   </style>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -56,8 +174,16 @@
 </head>
 
 <body>
+  <!-- 3D floating elements -->
+  <div class="floating" style="top:20%; left:10%; font-size:3rem;">⚛</div>
+  <div class="floating" style="top:70%; left:80%; font-size:4rem;">☢</div>
+  <div class="floating" style="top:40%; left:60%; font-size:2rem;">Ψ</div>
+  
+  <!-- Matrix rain effect -->
+  <canvas id="matrix" class="matrix-rain"></canvas>
+
   <header>
-    <h1>Quantum Matter</h1>
+    <h1 class="scary-text" data-text="Quantum Matter">Quantum Matter</h1>
     <nav>
       <a href="#intro">Intro</a>
       <a href="#phases">Phases</a>
@@ -68,7 +194,7 @@
   </header>
 
   <section id="intro">
-    <h2>What is Quantum Matter?</h2>
+    <h2 class="scary-text" data-text="What is Quantum Matter?">What is Quantum Matter?</h2>
     <p>
       Quantum matter refers to states of matter that are governed by quantum mechanical effects like
       superposition, entanglement, and quantization. Unlike classical systems, quantum materials show
@@ -81,7 +207,7 @@
   </section>
 
   <section id="phases">
-    <h2>Quantum Phases of Matter</h2>
+    <h2 class="scary-text" data-text="Quantum Phases of Matter">Quantum Phases of Matter</h2>
     <h3>Superconductors</h3>
     <p>
       Superconductors allow electrons to move without resistance. Below a critical temperature, electrons
@@ -102,25 +228,25 @@
   </section>
 
   <section id="equations">
-    <h2>Core Quantum Equations</h2>
+    <h2 class="scary-text" data-text="Core Quantum Equations">Core Quantum Equations</h2>
     <h3>Schrödinger Equation</h3>
-    <p>\[
+    <p style="color: white; text-shadow: 0 0 5px var(--glow-color);">\[
       i\hbar \frac{\partial \Psi}{\partial t} = \hat{H} \Psi
     \]</p>
 
     <h3>Heisenberg Uncertainty Principle</h3>
-    <p>\[
+    <p style="color: white; text-shadow: 0 0 5px var(--glow-color);">\[
       \Delta x \cdot \Delta p \geq \frac{\hbar}{2}
     \]</p>
 
     <h3>Dirac Equation</h3>
-    <p>\[
+    <p style="color: white; text-shadow: 0 0 5px var(--glow-color);">\[
       (i \gamma^\mu \partial_\mu - m)\psi = 0
     \]</p>
   </section>
 
   <section id="experiments">
-    <h2>Famous Quantum Experiments</h2>
+    <h2 class="scary-text" data-text="Famous Quantum Experiments">Famous Quantum Experiments</h2>
     <h3>Double-Slit Experiment</h3>
     <p>
       Demonstrates wave-particle duality. Even single electrons can interfere with themselves, proving
@@ -141,7 +267,7 @@
   </section>
 
   <section id="applications">
-    <h2>Real-World Applications</h2>
+    <h2 class="scary-text" data-text="Real-World Applications">Real-World Applications</h2>
     <h3>Quantum Computing</h3>
     <p>
       Uses qubits to perform calculations leveraging superposition and entanglement, solving problems
@@ -160,7 +286,67 @@
   </section>
 
   <footer>
-    <p>© 2025 QuantumMatterWeb</p>
+    <p>© 2025 QuantumMatterWeb | Enter at your own risk</p>
   </footer>
+
+  <script>
+    // Matrix rain effect
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const nums = '0123456789';
+    const symbols = '⚛Ψ☢⏳⌛♾️∞';
+    
+    const alphabet = katakana + latin + nums + symbols;
+    
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    
+    const rainDrops = [];
+    
+    for (let x = 0; x < columns; x++) {
+      rainDrops[x] = 1;
+    }
+    
+    const draw = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#0F0';
+      ctx.font = fontSize + 'px monospace';
+      
+      for (let i = 0; i < rainDrops.length; i++) {
+        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+        
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          rainDrops[i] = 0;
+        }
+        rainDrops[i]++;
+      }
+    };
+    
+    setInterval(draw, 30);
+    
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+    
+    // Scary hover effect for sections
+    document.querySelectorAll('section').forEach(section => {
+      section.addEventListener('mouseenter', () => {
+        section.style.transform = 'translateZ(30px) rotateX(5deg) rotateY(5deg)';
+      });
+      section.addEventListener('mouseleave', () => {
+        section.style.transform = 'translateZ(0) rotateX(0) rotateY(0)';
+      });
+    });
+  </script>
 </body>
 </html>
