@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quantum Matter – Educational Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #111;
+      line-height: 1.6;
+    }
+    header {
+      background: #1e1e3f;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      margin: 0.5rem 1rem;
+      color: #ddd;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    section:nth-child(even) {
+      background: #fff;
+    }
+    h1, h2 {
+      color: #222;
+    }
+    footer {
+      background: #1e1e3f;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Quantum Matter</h1>
+    <nav>
+      <a href="#intro">Intro</a>
+      <a href="#phases">Phases</a>
+      <a href="#equations">Equations</a>
+      <a href="#experiments">Experiments</a>
+      <a href="#applications">Applications</a>
+    </nav>
+  </header>
+
+  <section id="intro">
+    <h2>What is Quantum Matter?</h2>
+    <p>
+      Quantum matter refers to states of matter that are governed by quantum mechanical effects like
+      superposition, entanglement, and quantization. Unlike classical systems, quantum materials show
+      collective phenomena that arise purely from the quantum nature of particles.
+    </p>
+    <p>
+      Examples include superconductors, topological insulators, and Bose-Einstein condensates. These
+      materials are studied for their strange and powerful behaviors, some of which have no classical counterpart.
+    </p>
+  </section>
+
+  <section id="phases">
+    <h2>Quantum Phases of Matter</h2>
+    <h3>Superconductors</h3>
+    <p>
+      Superconductors allow electrons to move without resistance. Below a critical temperature, electrons
+      form pairs called Cooper pairs, moving through a lattice without scattering.
+    </p>
+
+    <h3>Topological Insulators</h3>
+    <p>
+      These materials are insulators in the bulk but conduct on their surfaces due to topological order.
+      Their edge states are protected by quantum symmetries.
+    </p>
+
+    <h3>Bose-Einstein Condensates (BEC)</h3>
+    <p>
+      BECs form when bosons are cooled to near absolute zero. At this point, they occupy the lowest energy
+      state, behaving like a single quantum entity.
+    </p>
+  </section>
+
+  <section id="equations">
+    <h2>Core Quantum Equations</h2>
+    <h3>Schrödinger Equation</h3>
+    <p>\[
+      i\hbar \frac{\partial \Psi}{\partial t} = \hat{H} \Psi
+    \]</p>
+
+    <h3>Heisenberg Uncertainty Principle</h3>
+    <p>\[
+      \Delta x \cdot \Delta p \geq \frac{\hbar}{2}
+    \]</p>
+
+    <h3>Dirac Equation</h3>
+    <p>\[
+      (i \gamma^\mu \partial_\mu - m)\psi = 0
+    \]</p>
+  </section>
+
+  <section id="experiments">
+    <h2>Famous Quantum Experiments</h2>
+    <h3>Double-Slit Experiment</h3>
+    <p>
+      Demonstrates wave-particle duality. Even single electrons can interfere with themselves, proving
+      quantum superposition.
+    </p>
+
+    <h3>Stern-Gerlach Experiment</h3>
+    <p>
+      Shows that angular momentum (spin) is quantized. Silver atoms deflect in discrete directions
+      under a magnetic field.
+    </p>
+
+    <h3>Bell's Inequality Tests</h3>
+    <p>
+      Confirms quantum entanglement by showing that local hidden variables cannot explain
+      observed correlations.
+    </p>
+  </section>
+
+  <section id="applications">
+    <h2>Real-World Applications</h2>
+    <h3>Quantum Computing</h3>
+    <p>
+      Uses qubits to perform calculations leveraging superposition and entanglement, solving problems
+      intractable for classical computers.
+    </p>
+
+    <h3>Quantum Sensors</h3>
+    <p>
+      Extremely sensitive to gravitational, magnetic, and temporal changes using quantum interference.
+    </p>
+
+    <h3>Quantum Cryptography</h3>
+    <p>
+      Ensures unbreakable communication through principles like quantum key distribution (QKD).
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 QuantumMatterWeb</p>
+  </footer>
+</body>
+</html>
